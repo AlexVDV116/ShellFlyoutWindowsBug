@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShellFlyoutWindowsBug.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShellFlyoutWindowsBug"
+    Shell.FlyoutBehavior="Locked"
+    Title="ShellFlyoutWindowsBug">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <Shell.FlyoutHeader>
+        <ContentView 
+                 HeightRequest="200">
+            <Grid BackgroundColor="Red">
+                <Image Aspect="AspectFill"
+                   Source="store.jpg"
+                   Opacity="0.6" />
+                <Label Text="Header"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+            </Grid>
+        </ContentView>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+            <StackLayout>
+                <Label Text="Footer"
+                   TextColor="Green"
+                       BackgroundColor="Red"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            </StackLayout>
+        </ContentView>
+    </Shell.FlyoutFooter>
+
+    <Shell.TitleView>
+        <Label Text="Title"
+           TextColor="White"
+           VerticalTextAlignment="Center"
+           VerticalOptions="Center"
+           HorizontalOptions="Start"
+           Padding="5,0,0,0"
+           HeightRequest="50"               
+           FontSize="Small" />
+    </Shell.TitleView>
+
+</Shell>
